@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            /* Specificity
+            !important > id > class > element
+            */
+
+            /* 0 0 1 2 */
+            div.container  span {
+                color: blue;
+            }
+
+            /* 0 1 1 0 */
+            .container #hello-world{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <span id="hello-world">Hello World</span>
+        </div>
+    </body>
+</html>
