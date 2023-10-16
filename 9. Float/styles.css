@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 3;
+}
+.first {
+  background-color: rgb(238, 14, 14);
+  width: 100px;
+  height: 200px;
+  float: right;
+}
+.second {
+  background-color: rgb(14, 238, 77);
+  width: 100px;
+  height: 100px;
+
+  float: left;
+}
+.para {
+  clear: left;
+}
