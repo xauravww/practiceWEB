@@ -1,0 +1,32 @@
+* {
+  margin: 3rem;
+}
+.container {
+  display: flex;
+
+  height: 200px;
+  background-color: #ccc;
+  border: 1px solid black;
+  justify-content: space-between;
+  align-items: center;
+
+  flex-direction: row-reverse;
+
+  flex-wrap: nowrap;
+  row-gap: 10px;
+  column-gap: 3px;
+}
+
+.item {
+  border: 1px solid #333;
+  background-color: #777;
+  width: 65px;
+  color: rgb(237, 191, 7);
+  margin: 10px;
+}
+
+.item1 {
+  /* flex: 5; */
+  flex-basis: 100%;
+  align-self: flex-end;
+}
