@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        .parent{
+            height: 100vh; /* used for column fill */
+            column-count: 3;
+            column-width: 150px; /* define atleast*/
+            column-rule: 10px solid black;
+            column-gap: 40px;
+            column-fill: balance;
+        }
+        h2{
+            column-span: all; /* or none */
+        }
+    </style>
+    <body>
+        <div class="parent">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
+            iste quasi porro error praesentium voluptatibus et omnis?
+            Repellendus
+            <hr>
+
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis iste
+            veritatis veniam, necessitatibus ut magnam blanditiis. Voluptates
+            blanditiis culpa tempore illum quos voluptatibus cum maiores
+            recusandae magni!<h2>Header</h2> Ut architecto eaque eveniet maiores
+            ipsam ad
+            necessitatibus voluptatem, adipisci in sapiente consequuntur
+            dignissimos a iste vel, explicabo deleniti sit alias, quod dolorem.
+            <hr>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+            tenetur fugiat ut magnam voluptatibus natus autem numquam eligendi
+            dolores molestiae.
+        </body>
+    </html>
