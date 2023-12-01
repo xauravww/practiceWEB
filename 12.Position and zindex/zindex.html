@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Position</title>
+    </head>
+    <style>
+        body{
+            height: 200vh;
+        }
+        .parent ,.parent2{
+            position: relative;
+            padding: .25rem;
+            background-color: lightskyblue;
+           
+        }
+        .child1{
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+           z-index: 9;
+            padding: .25rem;
+            background-color: lightcoral;
+        }
+        .child2{
+          z-index: 10;
+            position: fixed;
+            padding: .25rem;
+            background-color: lightgreen;
+        }
+        .child3{
+            z-index: 5;
+            position: sticky;
+            top: 10px;
+            padding: .25rem;
+            background-color: peru;
+        }
+        .child4{
+            z-index: 12;
+            padding: .25rem;
+            background-color: rgb(173, 57, 171);
+            color: white;
+        }
+
+        .parent2{
+            margin-top: 10px;
+            z-index: -12;
+            top: -70px;
+        }
+        /* even parent 2 elements has more z-index but due to stacking context they will position themselves below the parent2 as it has more z-index */
+    </style>
+    <body>
+        <div class="parent">Parent Relative
+            <div class="child1">Absolute</div>
+            <div class="child2">Fixed</div>
+            <div class="child3">Sticky</div>
+            <div class="child4">Four</div>
+            <div class="child4">Four</div>
+        </div>
+        <div class="parent2">Parent Relative
+            <div class="child1">Absolute</div>
+            <div class="child2">Fixed</div>
+            <div class="child3">Sticky</div>
+            <div class="child4">Four</div>
+            <div class="child4">Four</div>
+        </div>
+    </body>
+</html>
