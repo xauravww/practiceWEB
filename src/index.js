@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client"
 
 // import App from "./App"
 import "./index.css"
+import { title } from "process"
 
 //prop
 const books = [
@@ -47,14 +48,32 @@ function BookList() {
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<BookList />)
 
+//event handlers
+
+const easyClickHandler = (e) => {
+  console.log(e)
+  alert("Hello World")
+}
+
+const complexClickHandler = (author) => {
+  console.log(author)
+}
+
 //component
 const Book = (props) => {
   const { img, title, author } = props
   return (
-    <article className="book">
-      <img src={img} alt="" />
-      <h1>{title}</h1>
+    <article className="book" onMouseOver={(e) => console.log(e.target)}>
+      <img src={img} />
+      <h1 onClick={() => easyClickHandler()}>{title}</h1>
       <h4>{author}</h4>
+
+      <button type="button" onClick={complexClickHandler(author)}>
+        Called on rendering
+      </button>
     </article>
   )
 }
+// calling with and without arrow function
+//event.target
+//onClick , onMouseOver
