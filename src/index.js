@@ -26,7 +26,12 @@ function BookList() {
           title={firstBook.title}
           author={firstBook.author}
           img={firstBook.img}
-        />
+        >
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem iste
+            minus ipsa hic nam error cum, beatae quod eos delectus.
+          </p>
+        </Book>
         <Book
           title={secondBook.title}
           author={secondBook.author}
@@ -40,12 +45,13 @@ function BookList() {
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render(<BookList />)
 
-const Book = (props) => {
+const Book = ({ img, title, author, children }) => {
   return (
     <article className="book">
-      <img src={props.img} alt="" />
-      <h1>{props.title}</h1>
-      <h4>{props.author}</h4>
+      <img src={img} alt="" />
+      <h1>{title}</h1>
+      <h4>{author}</h4>
+      {children}
     </article>
   )
 }
