@@ -1,0 +1,118 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body {
+  /* changed */
+  background: linear-gradient(
+    to right,
+    hsl(200, 100%, 50%),
+    hsl(175, 100%, 50%)
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.clock {
+  width: 300px;
+  height: 300px;
+  background-color: rgb(142, 211, 219);
+  border-radius: 50%;
+  position: relative;
+
+  border: 5px solid hsl(199, 76%, 5%);
+}
+
+.clock .number {
+  --rotation: 0;
+  position: absolute;
+  width: 100%; /* used to take all parent width and lly height */
+  height: 100%;
+  text-align: center; /*added*/
+
+  /* left: 50%; */
+  transform: rotate(var(--rotation));
+  /* transform: rotate(30deg); */
+  font-size: 1.6rem;
+}
+
+.clock .number2 {
+  --rotation: 30deg;
+}
+.clock .number3 {
+  --rotation: 60deg;
+}
+.clock .number4 {
+  --rotation: 90deg;
+}
+.clock .number5 {
+  --rotation: 120deg;
+}
+.clock .number6 {
+  --rotation: 150deg;
+}
+.clock .number7 {
+  --rotation: 180deg;
+}
+.clock .number8 {
+  --rotation: 210deg;
+}
+.clock .number9 {
+  --rotation: 240deg;
+}
+.clock .number10 {
+  --rotation: 270deg;
+}
+.clock .number11 {
+  --rotation: 300deg;
+}
+.clock .number12 {
+  --rotation: 330deg;
+}
+
+.clock .hand {
+  --rotation: 0;
+  position: absolute;
+  width: 10px;
+  background-color: black;
+  height: 40%;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  transform-origin: bottom;
+  z-index: 20;
+
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid white;
+}
+
+.clock .minute {
+  height: 45%;
+  width: 7px;
+}
+
+.clock .second {
+  height: 50%;
+  width: 4px;
+  background-color: red;
+}
+
+.clock::after {
+  position: absolute;
+  content: " ";
+  z-index: 345;
+  background-color: black;
+  height: 15px;
+  width: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
