@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Genos", sans-serif;
+  font-size: 2.8vw;
+  /* border: 1px solid red; */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #dadada;
+  position: relative;
+}
+.quiz-header {
+  text-align: center;
+  padding: 2vw;
+}
+.quiz-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* wrapper for all elements in a question-item */
+.item-container {
+  width: 90%;
+  background-color: white;
+  margin-bottom: 2vw;
+  padding: 2vw 0;
+  border-radius: 10px;
+}
+ul {
+  list-style-type: none;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Question Heading + Index */
+.quiz-item {
+  background-color: #333;
+  color: white;
+  padding: 1vw;
+  /* border-radius: 10px; */
+}
+
+.quiz-item.correct {
+  background-color: rgb(117, 159, 55);
+  color: white;
+}
+
+.quiz-item.wrong {
+  background-color: rgb(159, 86, 55);
+  color: white;
+}
+
+/*  all answers checkbox + labels  container */
+.answers-box {
+  padding: 0 2vw;
+}
+
+/* Single Answer item wrapper */
+.answers-box .value-wrapper {
+  display: flex;
+  align-items: center;
+}
+/* radio btn input only*/
+.answer[type="radio"] {
+  margin: 0 1vw;
+  transform: scale(1);
+  width: 2vw;
+}
+.answer[type="radio"]:checked {
+  accent-color: #232323;
+}
+.success-msg {
+  display: none;
+}
+.success-msg.show {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background-color: rgb(117, 159, 55);
+
+  height: 15vh;
+  font-size: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0 4vw;
+  color: white;
+
+  border-radius: 20px;
+  border: 5px solid black;
+}
+
+.btn {
+  padding: 4vw 7vw;
+  background-color: #333;
+  color: white;
+  border-radius: 10px;
+  border: none;
+
+  font-size: inherit;
+  width: fit-content;
+  align-self: center;
+  margin-top: 2vh;
+  margin-bottom: 3vh;
+
+  padding: 2vw 2.5vw;
+}
+
+@media (max-width: 991.98px) {
+  * {
+    font-size: 4vw;
+  }
+  .btn {
+    padding: 4vw 7vw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  * {
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 575.98px) {
+  * {
+    font-size: 6vw;
+  }
+}
