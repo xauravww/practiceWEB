@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  font-family: Rubik, sans-serif;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgb(23, 159, 189);
+  border-radius: 20px;
+}
