@@ -7,7 +7,7 @@ const Card = ({ id, name, info, image, price, handleDeleteOne }) => {
       <img src={image} alt="" />
       <div className="name-wrapper">
         <h3>{name}</h3>
-        <div className="price">$ {price}</div>
+        <div className="price">${price}</div>
       </div>
 
       <p className="info">
