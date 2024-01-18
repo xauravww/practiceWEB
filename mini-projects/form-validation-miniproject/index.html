@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Validation</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="error-container">
+                <ul class="ul">
+
+                </ul>
+            </div>
+            <form class="form">
+                <div class="item"><label for="username">Username</label><br />
+                    <input type="text" name="username" class="username"
+                        placeholder="saurav123"></div>
+                <div class="item"> <label for="username">Password</label><br />
+                    <input type="password" name="password" class="password"
+                        placeholder="Saura@***"></div>
+                <div class="item"> <label for="username">Confirm Password</label><br />
+                    <input type="password" name="confirm-password"
+                        class="confirm-password" placeholder="Saura@***"></div>
+                <div class="item">
+                    <input type="checkbox" name="terms" class="terms">
+                    <label>I agree to the terms and conditions</label>
+                </div>
+                <button class="btn" type="submit">Create Account</button>
+            </form>
+        </div>
+    </body>
+</html>
