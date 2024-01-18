@@ -12,6 +12,7 @@ body {
   justify-content: center;
 
   height: 100vh;
+
   background: linear-gradient(
     to right,
     hsl(200, 100%, 50%),
@@ -21,7 +22,7 @@ body {
 
 .container {
   display: flex;
-
+  width: 30vw;
   justify-content: center;
   align-items: center;
 
@@ -41,7 +42,7 @@ body {
 .error-container {
   background-color: rgb(230, 64, 64);
   color: white;
-  margin-bottom: 5vw;
+  /* margin-bottom: 5vw; */
   width: 100%;
   padding: 2vw;
   border-radius: 2vw;
@@ -87,4 +88,22 @@ body {
 .register-container {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 1199.98px) {
+  .container {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .container {
+    width: 60vw;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .container {
+    width: 90vw;
+  }
 }
