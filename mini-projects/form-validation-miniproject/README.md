@@ -5,7 +5,7 @@
 This documentation provides an overview of the form validation script used with an HTML form. The script is designed to validate user input in real-time and display error messages if any of the validation criteria are not met. The form includes fields for a username, password, and confirmation of the password, along with a checkbox for accepting terms and conditions.
 
 This project is live on
-https://xauravww-quiz-validation.netlify.app
+https://xauravww-form-validation.netlify.app
 
 ## File Structure
 
