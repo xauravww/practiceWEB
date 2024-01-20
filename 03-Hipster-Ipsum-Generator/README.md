@@ -22,10 +22,6 @@ This WebApp is live on: [React Hipster Ipsum Generator](https://xauravww-hipster
 ## Folder Structure
 
 - `src/`: Contains the main source code for the React app.
-  - `components/`: Houses main reusable components used in the app.
-    - `Loader/`: Component for displaying a loading spinner.
-    - `ParagraphGenerator/`: Component for generating hipster paragraphs.
-    - `SentenceGenerator/`: Component for generating hipster sentences.
   - `App.js`: Main component representing the entire application.
 
 ## Usage
