@@ -1,0 +1,41 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+
+  background-color: #e6e6e6;
+}
+
+h1 {
+  /* background-color: green; */
+  position: relative;
+}
+
+.App h1:after {
+  position: absolute;
+  width: 60%;
+  height: 0.5vw;
+  content: "";
+  background-color: #4d4dff;
+
+  left: 50%;
+  /* right: 0; */
+  bottom: -1vw;
+
+  transform: translate(-50%, -50%);
+  /* transform: translateX(-50%); */
+}
+
+@media (max-width: 575.98px) {
+  .App h1 {
+    font-size: 6.5vw;
+  }
+
+  .App h1:after {
+    height: 2vw;
+    bottom: -3vw;
+  }
+}
