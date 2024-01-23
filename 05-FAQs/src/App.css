@@ -1,0 +1,142 @@
+.container-app {
+  background-color: #ccc;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box {
+  background-color: #ffffff;
+  width: 80vw;
+  /* height: 50vw; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* flex-direction: column; */
+  border-radius: 10px;
+  padding: 2vw 1vw;
+}
+
+.header-wrapper {
+  height: 100%;
+}
+.header {
+  padding: 1vw 1.5vw;
+  font-size: 3vw;
+  font-weight: 700;
+}
+
+.items-wrapper {
+  /* height: 70vh; */
+
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  flex-direction: column;
+  /* margin: 0 0.5vw; */
+
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.items-wrapper::-webkit-scrollbar {
+  width: 0.5vw;
+}
+.items-wrapper::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+}
+
+.item {
+  /* background-color: red; */
+  padding: 1vw 1.5vw;
+  margin: 0.5vw 2vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: white;
+  /* padding: 0.5vw 1vw; */
+
+  box-shadow: 0px 0px 2px 1px rgba(7, 7, 7, 0.445);
+}
+
+.item-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* gap: 1vw; */
+  width: 100%;
+  /* overflow-y: auto; */
+}
+
+.item-content {
+  /* white-space: nowrap; */
+  /* padding: 0 1vw; */
+  font-size: 1.6vw;
+  font-weight: bold;
+}
+
+.item-btn {
+  cursor: pointer;
+  width: 1.5vw;
+  height: 1.5vw;
+}
+
+.item-answer {
+  width: 100%;
+  font-size: 1.6vw;
+  /* display: flex;
+  align-items: center; */
+  /* justify-content: center; */
+  /* padding: 0 1vw; */
+  /* height: 5vw; */
+}
+
+.header {
+  font-size: 3vw;
+  font-weight: 700;
+}
+
+@media (max-width: 991.98px) {
+  .item-btn {
+    width: 2vw;
+    height: 2vw;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .item-btn {
+    width: 3vw;
+    height: 3vw;
+  }
+  .item-content {
+    font-size: 2vw;
+  }
+  .item-answer {
+    font-size: 2vw;
+  }
+  .header {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .item-btn {
+    width: 4vw;
+    height: 4vw;
+  }
+  .item-content {
+    font-size: 4vw;
+  }
+  .item-answer {
+    font-size: 4vw;
+  }
+  .header {
+    font-size: 5vw;
+  }
+}
