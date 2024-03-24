@@ -25,20 +25,20 @@ const aSharp4 = new Audio("./assets/mp3-Notes/a-4.mp3")
 const b4 = new Audio("./assets/mp3-Notes/b4.mp3")
 
 const NOTES = [
-  { note: "A", frequency: 261.626, active: false, audio: c3 },
-  { note: "S", frequency: 277.183, active: false, audio: d3 },
-  { note: "D", frequency: 293.665, active: false, audio: e3 },
-  { note: "F", frequency: 311.127, active: false, audio: f3 },
-  { note: "G", frequency: 329.628, active: false, audio: g3 },
-  { note: "H", frequency: 349.228, active: false, audio: a3 },
-  { note: "J", frequency: 369.994, active: false, audio: b3 },
-  { note: "Z", frequency: 391.995, active: false, audio: c4 },
-  { note: "X", frequency: 415.305, active: false, audio: d4 },
-  { note: "C", frequency: 430.0, active: false, audio: a4 },
-  { note: "V", frequency: 460.0, active: false, audio: f4 },
-  { note: "B", frequency: 475.0, active: false, audio: g4 },
-  { note: "N", frequency: 440.0, active: false, audio: a4 },
-  { note: "M", frequency: 440.0, active: false, audio: b4 },
+  { note: "CapsLock", frequency: 261.626, active: false, audio: c3 },
+  { note: "A", frequency: 277.183, active: false, audio: d3 },
+  { note: "S", frequency: 293.665, active: false, audio: e3 },
+  { note: "D", frequency: 311.127, active: false, audio: f3 },
+  { note: "F", frequency: 329.628, active: false, audio: g3 },
+  { note: "G", frequency: 349.228, active: false, audio: a3 },
+  { note: "H", frequency: 369.994, active: false, audio: b3 },
+  { note: "J", frequency: 391.995, active: false, audio: c4 },
+  { note: "K", frequency: 415.305, active: false, audio: d4 },
+  { note: "L", frequency: 430.0, active: false, audio: a4 },
+  { note: ";", frequency: 460.0, active: false, audio: f4 },
+  { note: "'", frequency: 475.0, active: false, audio: g4 },
+  { note: "4", frequency: 440.0, active: false, audio: a4 },
+  { note: "5", frequency: 440.0, active: false, audio: b4 },
 
   { note: "Q", frequency: 456.164, active: false, audio: cSharp3 },
   { note: "W", frequency: 466.164, active: false, audio: dSharp3 },
@@ -58,8 +58,8 @@ var audioContext = new (window.AudioContext || window.webkitAudioContext)()
 
 document.addEventListener("keydown", (e) => {
   if (e.repeat) return
-
-  const inputKey = e.key.toUpperCase()
+  console.log(e.key)
+  const inputKey = e.key != "CapsLock" ? e.key.toUpperCase() : "CapsLock"
   const noteDetail = findNoteDetails(inputKey)
 
   if (noteDetail == null) return
