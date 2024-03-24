@@ -7,7 +7,7 @@
 
 - Try on PC only , not designed for smaller screens , works with keyboard only
 - Check out the live demo of the Piano Mini Project at
-https://xauravww-piano.netlify.app/
+[https://xauravww-piano.netlify.app/](https://adv-midi-piano-miniproject.onrender.com)
 
 ## Features
 
