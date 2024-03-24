@@ -7,7 +7,7 @@
 
 - Try on PC only , not designed for smaller screens , works with keyboard only
 - Check out the live demo of the Piano Mini Project at
-[https://xauravww-piano.netlify.app/](https://adv-midi-piano-miniproject.onrender.com)
+[https://adv-midi-piano-miniproject.onrender.com](https://adv-midi-piano-miniproject.onrender.com)
 
 ## Features
 
@@ -25,6 +25,11 @@
 
 To use this piano project locally, clone the repository using the following Git command:
 
-`git svn clone https://github.com/xauravww/practiceWEB/trunk/mini-projects/adv-midi-piano-miniproject`
+```
+git clone --depth 1 --no-checkout https://github.com/xauravww/practiceWEB.git
+cd  practiceWEB
+git sparse-checkout set mini-projects/analog-clock-mini-project
+git checkout 
+```
 
 Feel free to make enhancements, customize the piano keys, or report any issues you encounter. Enjoy creating music with the virtual piano!
