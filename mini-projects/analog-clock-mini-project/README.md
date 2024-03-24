@@ -20,7 +20,12 @@ https://xauravww-analog-clock.netlify.app/.
 ## Use Locally
 First clone its subdirectory 
 
-```git svn clone https://github.com/xauravww/practiceWEB/trunk/mini-projects/analog-clock-mini-project```
+```
+git clone --depth 1 --no-checkout https://github.com/xauravww/practiceWEB.git
+cd  practiceWEB
+git sparse-checkout set mini-projects/adv-midi-piano-miniproject
+git checkout 
+```
 
 
 
