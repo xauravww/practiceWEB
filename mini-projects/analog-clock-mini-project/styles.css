@@ -116,3 +116,7 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
 }
+
+.flip{
+  transform: rotate(180deg);
+}
