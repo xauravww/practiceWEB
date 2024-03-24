@@ -23,7 +23,7 @@ First clone its subdirectory
 ```
 git clone --depth 1 --no-checkout https://github.com/xauravww/practiceWEB.git
 cd  practiceWEB
-git sparse-checkout set mini-projects/adv-midi-piano-miniproject
+git sparse-checkout set mini-projects/analog-clock-mini-project
 git checkout 
 ```
 
