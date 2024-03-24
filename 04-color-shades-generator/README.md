@@ -5,7 +5,7 @@ This project is a color generator that allows you to generate colors shades and 
 
 ![Project Gif](https://res.cloudinary.com/drvntsbpo/image/upload/v1705765811/Animation_f5wbjf.webp)
 
-This project is live on [https://xauravww-color-shader.netlify.app/](https://xauravww-color-shader.netlify.app/).
+This project is live on [https://color-shader-xauravww.onrender.com](https://color-shader-xauravww.onrender.com)
 
 ## Features
 
@@ -36,7 +36,12 @@ This project is live on [https://xauravww-color-shader.netlify.app/](https://xau
 ## Installation
 
 #### Step 1: Clone the subdirectory of this repository
-```git svn clone https://github.com/xauravww/practiceWEB/trunk/react-projects/04-color-shades-generator/```
+```
+git -b react-projects clone --depth 1 --no-checkout https://github.com/xauravww/practiceWEB.git
+cd  practiceWEB
+git sparse-checkout set 04-color-shades-generator
+git checkout
+```
 
 #### Step 2: Install the dependencies
 ```npm install```
@@ -45,7 +50,7 @@ This project is live on [https://xauravww-color-shader.netlify.app/](https://xau
 ```npm run dev```
 
 #### Step 4: Open the webapp
- Open `http://localhost:4173/` in your browser to view the app.
+ Open `http://localhost5173/` (or whatever i.e. shown in terminal) in your browser to view the app.
 
 
 ## Folder Structure
