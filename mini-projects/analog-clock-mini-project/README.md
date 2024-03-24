@@ -1,10 +1,10 @@
 # Analog Clock Mini Project
 This is a simple and elegant project showcases a basic analog clock implemented using HTML, CSS, and JavaScript.
-It has not any big use , it just for revsing my concepts.
+It has not any big use , it just for revising my concepts.
 
 ## Live Demo
 Check out the live demo of the Analog Clock at 
-https://xauravww-analog-clock.netlify.app/.
+[https://analog-clock-xauravww.onrender.com](https://analog-clock-xauravww.onrender.com)
 
 ## Features
 
@@ -24,7 +24,7 @@ First clone its subdirectory
 git clone --depth 1 --no-checkout https://github.com/xauravww/practiceWEB.git
 cd  practiceWEB
 git sparse-checkout set mini-projects/analog-clock-mini-project
-git checkout 
+git checkout
 ```
 
 
