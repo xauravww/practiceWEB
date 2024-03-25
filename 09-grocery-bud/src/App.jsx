@@ -14,14 +14,33 @@ const [editItemId, seteditItemId] = useState("")
 
 useEffect(() => {
   // Load tasks from localStorage when the component mounts
-  const arr = JSON.parse(localStorage.getItem("todos")||[])
-  const savedTasks =  arr || [];
-  dispatch(fetchAllTodos(savedTasks));
+  try {
+    let storedTasks = localStorage.getItem("todos");
+    const defaultTasks = [{"id":"1","name":"Dummy task ..","isDone":false}];
+  
+    if (storedTasks) {
+      storedTasks = JSON.parse(storedTasks);
+    } else {
+      storedTasks = defaultTasks;
+    }
+
+    dispatch(fetchAllTodos(storedTasks));
+  } catch (error) {
+    console.error("Error loading tasks from localStorage:", error);
+    // Optionally handle the error or set default tasks
+    dispatch(fetchAllTodos([{"id":"1","name":"Dummy task ..","isDone":false}]));
+  }
 }, []);
 
 useEffect(() => {
   // Update localStorage whenever TASKS changes
-  localStorage.setItem("todos", JSON.stringify(TASKS));
+  try {
+    let tasksToStore = TASKS || [{"id":"1","name":"Dummy task ..","isDone":false}];
+    localStorage.setItem("todos", JSON.stringify(tasksToStore));
+  } catch (error) {
+    console.error("Error saving tasks to localStorage:", error);
+    // Optionally handle the error
+  }
 }, [TASKS]);
 
   useEffect(() => {
