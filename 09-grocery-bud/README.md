@@ -1,6 +1,7 @@
 # Grocery Bud
 This project is a simple todo list named "Grocery Bud" that allows users to add, edit, mark as done, and delete grocery items. It is built using React, Tailwind CSS, and Redux Toolkit. I chose to build this small app using Redux Toolkit to showcase my skills in using Redux Toolkit for state management in React applications.
 
+![Grocery-Bud-Img](https://res.cloudinary.com/drvntsbpo/image/upload/v1711396632/grocery-bud_mlfowb.webp)
 
 # This project is live on [https://grocery-bud-xauravww.onrender.com/](https://grocery-bud-xauravww.onrender.com/).
 

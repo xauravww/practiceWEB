@@ -93,10 +93,10 @@ return (
     <div className="container bg-white flex flex-col justify-center items-center  border border-slate-500 rounded-lg shadow-lg w-[80vw] md:text-4xl  lg:w-[50vw] ">
       <h1 className="text-3xl font-bold mt-5">Grocery Bud</h1>
       <p className="paragraph-below-header text-xl">Using... Redux-Toolkit</p>
-      <div className="input-wrapper  flex justify-between w-full">
+      <div className="input-wrapper mt-5 flex justify-between w-full h-full">
         <input
           type="text"
-          className="input outline-none px-4 py-1 bg-slate-300 text-black w-full"
+          className="input h-full outline-none px-4 py-1 bg-slate-300 text-4xl text-black w-full md:2xl"
           placeholder="Item"
           onChange={(e) => setinputValue(e.target.value)}
           value={inputValue}
@@ -120,7 +120,7 @@ return (
             // onClick={() => handleDone(item)}
             >
               <div
-                className={`item w-full overflow-hidden overflow-ellipsis whitespace-nowrap  hover:cursor-pointer ${item.isDone ? "line-through text-slate-500" : ""
+                className={`item w-full text-3xl p-1 overflow-hidden overflow-ellipsis whitespace-nowrap  hover:cursor-pointer ${item.isDone ? "line-through text-slate-500" : ""
                   }`}
                 onClick={() => handleDone(item)}
               >
