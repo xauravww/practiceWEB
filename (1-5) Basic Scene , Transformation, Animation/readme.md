@@ -61,3 +61,5 @@ This makes it easier to manage multiple objects as a single entity, for example,
 ### Notes
 
 - This setup is a basic example and can be expanded with additional geometries, materials, lighting, animations, and transformations to create more complex scenes.
+- For animations, you can use libraries like GSAP (GreenSock Animation Platform) to create smooth and complex animations. GSAP can be used to animate various properties of Three.js objects over time.
+- `requestAnimationFrame` is a browser function that allows you to synchronize your animations with the browser's refresh rate, resulting in smoother animations. You can use it to create animation loops that update the scene on each frame. 
