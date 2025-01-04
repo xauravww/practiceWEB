@@ -23,7 +23,7 @@ cube2.position.y = -1
 cube2.rotation.x = 2
 const cube3 = new THREE.Mesh(new THREE.BoxGeometry(0.6,1,1),new THREE.MeshBasicMaterial({color:0xe6a200}))
 cube3.position.x = 1.2
-const cube4 = new THREE.Mesh(new THREE.BoxGeometry(0.7,0.4,1),new THREE.MeshBasicMaterial({color:0x00ff0f}))
+const cube4 = new THREE.Mesh(new THREE.BoxGeometry(0.7,0.4,1),new THREE.MeshBasicMaterial({color:0x00ff0f,wireframe:true}))
 cube4.position.x = 0
 cube4.position.y = 1
 
@@ -45,7 +45,6 @@ const camera = new THREE.PerspectiveCamera(75,size.height/size.width)
 
 camera.position.z = 4
 scene.add(camera)
-
 //rotate it
 
 

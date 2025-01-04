@@ -15,12 +15,13 @@ This script sets up a basic 3D scene using the Three.js library. Below is a brea
    - An `AxesHelper` is added to the scene to visualize the axes (X, Y, Z) with a length of 2 units.
 
 4. **Mesh Creation**
-   - Three cubes (`cube1`, `cube2`, `cube3`) are created using `THREE.BoxGeometry` and `THREE.MeshBasicMaterial`.
+   - Three cubes (`cube1`, `cube2`, `cube3`) are created using `THREE.BoxGeometry` and `THREE.MeshBasicMaterial`(using options like colors , wireframe:true|false etc.)
    - Each cube is assigned a different color and positioned at specific coordinates within the scene.
 
 5. **Camera Setup**
    - A `PerspectiveCamera` is configured with a field of view of 75 degrees and an aspect ratio based on the window size.
    - The camera is positioned along the Z-axis at a distance of 3 units from the origin.
+   - We can alos use different properties like lookAt , position etc.
 
 6. **Renderer Configuration**
    - A `WebGLRenderer` is initialized to render the scene onto the selected canvas.
