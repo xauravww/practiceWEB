@@ -186,15 +186,6 @@ function setupEventListeners() {
     const configToggleBtn = document.getElementById('config-toggle-btn');
     const configCloseBtn = document.getElementById('config-close-btn');
     const configMenu = document.getElementById('config-menu');
-    const toggleKeyTriggers = document.getElementById('toggleKeyTriggers'); // Updated ID
-    const pianoElement = document.querySelector('.piano');
-
-    // --- Remove Slider References & Listeners ---
-    /*
-    const volumeSlider = document.getElementById('volumeSlider');
-    const echoDelaySlider = document.getElementById('echoDelaySlider');
-    const echoFeedbackSlider = document.getElementById('echoFeedbackSlider');
-    */
 
     // Keep Toggle/Close Listeners
     if (configToggleBtn && configMenu) {
@@ -207,32 +198,6 @@ function setupEventListeners() {
             configMenu.classList.add('hidden');
         });
     }
-
-    // Add Listener for Key Trigger Toggle
-    if (toggleKeyTriggers && pianoElement) {
-        // Set initial state based on checkbox default
-        if (toggleKeyTriggers.checked) {
-            pianoElement.classList.add('show-key-triggers'); // Updated class
-        } else {
-            pianoElement.classList.remove('show-key-triggers'); // Updated class
-        }
-
-        // Add change listener
-        toggleKeyTriggers.addEventListener('change', () => {
-            if (toggleKeyTriggers.checked) {
-                pianoElement.classList.add('show-key-triggers'); // Updated class
-            } else {
-                pianoElement.classList.remove('show-key-triggers'); // Updated class
-            }
-        });
-    }
-
-    // --- Remove Slider Listeners ---
-    /*
-    if (volumeSlider && masterGainNode) { ... }
-    if (echoDelaySlider && echoDelayNode) { ... }
-    if (echoFeedbackSlider && echoFeedbackNode) { ... }
-    */
 }
 
 // mapSpecialKeys remains the same

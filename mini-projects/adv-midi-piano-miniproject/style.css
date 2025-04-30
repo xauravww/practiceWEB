@@ -24,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   padding: 20px;
   background: linear-gradient(
     135deg,
@@ -59,87 +59,79 @@ body {
 }
 .piano {
   display: flex;
-  height: clamp(150px, 30vh, 250px);
+  height: clamp(250px, 55vh, 500px);
   width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  background-color: white;
-  border: 10px solid rgb(166, 235, 91);
-  border-radius: 20px;
+  max-width: 1100px;
+  margin: 10px auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
   position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 .piano::before {
-  content: "";
-  position: absolute;
-  height: clamp(15px, 5%, 25px);
-  width: 100%;
-  background-color: black;
-  top: -10px;
-  left: 0;
-  right: 0;
-  border-radius: 5px;
-  z-index: 5;
+  display: none;
 }
 .key {
-  border: 1px solid black;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.4rem;
+  padding: 0;
   cursor: pointer;
   user-select: none;
   transition: background-color 0.1s ease-out;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
   position: relative;
-}
-.key > div {
-  width: 100%;
-  text-align: center;
+  overflow: hidden;
 }
 .key > div:first-child {
-  font-weight: bold;
-  font-size: 0.9em;
   position: absolute;
-  top: 0.5em;
+  top: 0.3em;
   left: 0;
   right: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: clamp(0.7em, 1.5vw, 0.9em);
+  color: #000;
+  pointer-events: none;
 }
 .key > div:last-child {
-  font-size: 0.8em;
-  color: #555;
   position: absolute;
-  bottom: 0.5em;
+  bottom: 0.4em;
   left: 0;
   right: 0;
-  display: none;
+  text-align: center;
+  font-size: clamp(0.6em, 1.3vw, 0.8em);
+  color: #000;
+  display: block;
+  pointer-events: none;
 }
 .key.white {
   flex-grow: 1;
   flex-basis: 0;
   background-color: white;
-  color: #333;
   z-index: 1;
+  border-right: 1px solid #000;
+  border-bottom: none;
+  box-shadow: none;
+}
+.key.white:last-child {
+  border-right: none;
 }
 .key.black {
-  width: 8%;
+  width: 4.2%;
   height: 60%;
   background-color: black;
-  color: white;
-  margin-left: -4%;
-  margin-right: -4%;
+  margin-left: -2.1%;
+  margin-right: -2.1%;
   z-index: 2;
-  border-radius: 0 0 4px 4px;
-  border: 1px solid #555;
-  border-top: none;
+  border-radius: 0 0 5px 5px;
+  border: none;
+  box-shadow: none;
 }
 .key.white.active {
-  background-color: #ccc;
+  background-color: #eee;
 }
 .key.black.active {
-  background-color: #333;
+  background-color: #222;
 }
 #config-toggle-btn {
   position: absolute;
@@ -220,22 +212,19 @@ body {
     margin-bottom: 15px;
   }
   .piano {
-    max-width: 95%;
-    height: clamp(120px, 25vh, 200px);
-    border-width: 8px;
-    border-radius: 15px;
+    border-radius: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
   }
-  .piano::before {
-    top: -6px;
+  .key > div:first-child { top: 0.25em; }
+  .key > div:last-child { bottom: 0.3em; }
+  .key.white {
+    border-right-width: 1px;
   }
-  .key > div:first-child { font-size: 0.8em; }
-  .key > div:last-child { font-size: 0.7em; }
   .key.black {
-    width: 9%;
-    margin-left: -4.5%;
-    margin-right: -4.5%;
-    border: 1px solid #555;
-    border-top: none;
+    width: 4.8%;
+    margin-left: -2.4%;
+    margin-right: -2.4%;
+    border-radius: 0 0 4px 4px;
   }
   #config-toggle-btn { top: 15px; right: 15px; font-size: 1.3rem; padding: 6px 10px; }
   .config-panel { top: 60px; right: 15px; width: 220px; padding: 15px; }
@@ -245,25 +234,19 @@ body {
     padding: 10px 0;
   }
   .piano {
-    border-radius: 10px;
-    border-width: 5px;
-    height: clamp(100px, 20vh, 180px);
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
-  .piano::before {
-    top: -4px;
-    height: clamp(10px, 4%, 15px);
+  .key > div:first-child { top: 0.2em; font-size: 0.7em; }
+  .key > div:last-child { bottom: 0.2em; font-size: 0.6em; }
+  .key.white {
+    border-right-width: 1px;
   }
-  .key {
-    padding: 0.2rem;
-  }
-  .key > div:first-child { font-size: 0.7em; top: 0.3em; }
-  .key > div:last-child { font-size: 0.6em; bottom: 0.3em; }
   .key.black {
-    width: 10%;
-    margin-left: -5%;
-    margin-right: -5%;
-    border: 1px solid #555;
-    border-top: none;
+    width: 5.5%;
+    margin-left: -2.75%;
+    margin-right: -2.75%;
+    border-radius: 0 0 3px 3px;
   }
   #config-toggle-btn { top: 10px; right: 10px; font-size: 1.2rem; padding: 5px 8px; }
   .config-panel { top: 50px; right: 10px; width: calc(100% - 20px); }
@@ -332,16 +315,18 @@ body {
 */
 
 /* Show key trigger when piano has the class */
+/*
 .piano.show-key-triggers .key > div:last-child {
     display: block;
 }
+*/
 
 /* Adjust colors for black keys */
-.key.black > div:first-child { /* Note name */
-    color: #eee;
+.key.black > div:first-child {
+    color: #fff;
 }
-.key.black > div:last-child { /* Key trigger */
-    color: #aaa;
+.key.black > div:last-child {
+    color: #ccc;
 }
 
 /* Update adjustments for first/last child */
