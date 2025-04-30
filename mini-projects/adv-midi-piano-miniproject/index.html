@@ -14,9 +14,26 @@
     <body>
         <div class="container">
             <div class="h1">Midi-Piano</div>
+
+            <!-- Config Menu Button -->
+            <button id="config-toggle-btn" aria-label="Toggle Settings">⚙️</button>
+
+            <!-- Config Menu Panel -->
+            <div id="config-menu" class="config-panel hidden glassmorphic">
+                <h2>Settings</h2>
+
+                <!-- Toggle Keyboard Triggers -->
+                <div class="config-item">
+                    <label for="toggleKeyTriggers">Show Key Triggers:</label>
+                    <input type="checkbox" id="toggleKeyTriggers" checked>
+                </div>
+
+                 <p style="display: none;">(No settings available yet)</p>
+                <button id="config-close-btn">Close</button>
+            </div>
+
             <div class="blur"></div>
             <div class="piano">
-
                 <div class="key white" data-note="CapsLock"><div>C3</div><div>Caps</div></div>
                 <div class="key black" data-note="Q"><div>C3#</div><div>Q</div></div>
                 <div class="key white" data-note="A"><div>D3</div><div>A</div></div>
@@ -32,12 +49,10 @@
                 <div class="key white" data-note="J"><div>C4</div><div>J</div></div>
                 <div class="key black" data-note="Y"><div>C4#</div><div>Y</div></div>
                 <div class="key white" data-note="K"><div>D4</div><div>K</div></div>
-
                 <div class="key black" data-note="U"><div>D4#</div><div>U</div></div>
                 <div class="key white" data-note="L"><div>E4</div><div>L</div></div>
                 <div class="key white" data-note=";"><div>F4</div><div>;</div></div>
                 <div class="key black" data-note="I"><div>F4#</div><div>I</div></div>
-
                 <div class="key white" data-note="'"><div>G4</div><div>'</div></div>
                 <div class="key black" data-note="O"><div>G5#</div><div>O</div></div>
                 <div class="key white" data-note="4"><div>A4</div><div>4</div></div>

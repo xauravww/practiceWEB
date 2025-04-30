@@ -4,129 +4,363 @@
 }
 * {
   box-sizing: border-box;
-  font-family: Saurav;
+  font-family: Saurav, sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 1.2rem;
-  /* border: 1px solid red; */
+  font-size: 1.1rem;
+}
+html, body {
+  height: 100%;
+  overflow: hidden;
 }
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 .container {
-  background-color: rgb(12, 90, 132);
+  width: 100%;
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(58, 233, 58, 0.7),
+    rgba(132, 229, 28, 0.5)
+  );
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.container::before {
+  content: '';
+  position: absolute;
+  top: -10px; left: -10px; right: -10px; bottom: -10px;
+  background: inherit;
+  filter: blur(15px);
+  z-index: -1;
+}
+.h1 {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  z-index: 20;
+  font-stretch: expanded;
 }
 .piano {
-  min-width: 80%;
   display: flex;
-  /* width: 60%; */
-
-  justify-content: center;
-
+  height: clamp(150px, 30vh, 250px);
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   background-color: white;
-  height: 60%;
-
-  position: relative;
   border: 10px solid rgb(166, 235, 91);
   border-radius: 20px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-
-.key.white {
-  z-index: 10;
+.piano::before {
+  content: "";
+  position: absolute;
+  height: clamp(15px, 5%, 25px);
   width: 100%;
-  /* border: 1px solid rgb(3, 0, 0); */
-  text-align: center;
-  transition: all 0.2s;
-  background-color: white;
-}
-
-.key.black {
-  /* position: absolute; */
-  z-index: 11;
   background-color: black;
-  color: white;
-  width: 40%;
-  height: 50%;
-
-  margin-left: -2%;
-  margin-right: -2%;
-  text-align: center;
+  top: -10px;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+  z-index: 5;
 }
-
-.key.white:hover,
-.key.white.active {
-  background-color: #b6b1b1;
-}
-div.piano .key.black.active {
-  background-color: rgb(151, 146, 146);
-}
-
 .key {
   border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
   padding: 0.4rem;
-}
-.container {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(132, 229, 28, 0.712),
-    rgb(58, 233, 58)
-  );
-  backdrop-filter: blur(10px);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s ease-out;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   position: relative;
-  z-index: 1;
 }
-.blur {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.43);
-  z-index: 5;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(10px);
-}
-.piano::before {
-  position: absolute;
-  content: "";
-  height: 10%;
-  width: 100%;
-  background-color: black;
-  top: -20px;
-
-  border-radius: 5px;
-}
-.h1 {
-  position: absolute;
-  top: 20px;
-  z-index: 20;
-  background-color: rgba(0, 0, 0, 0.47);
+.key > div {
   width: 100%;
   text-align: center;
-  height: 80px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  backdrop-filter: blur(5px);
-
+}
+.key > div:first-child {
+  font-weight: bold;
+  font-size: 0.9em;
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  right: 0;
+}
+.key > div:last-child {
+  font-size: 0.8em;
+  color: #555;
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  right: 0;
+  display: none;
+}
+.key.white {
+  flex-grow: 1;
+  flex-basis: 0;
+  background-color: white;
+  color: #333;
+  z-index: 1;
+}
+.key.black {
+  width: 8%;
+  height: 60%;
+  background-color: black;
   color: white;
-  font-stretch: 200%;
+  margin-left: -4%;
+  margin-right: -4%;
+  z-index: 2;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #555;
+  border-top: none;
+}
+.key.white.active {
+  background-color: #ccc;
+}
+.key.black.active {
+  background-color: #333;
+}
+#config-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 30;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  transition: background-color 0.2s;
+}
+#config-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+.config-panel {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 25;
+  color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+.config-panel.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+.config-panel h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.config-item {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.config-item label {
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+.config-item input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+#config-close-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #555;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#config-close-btn:hover {
+  background-color: #777;
+}
+@media (max-width: 768px) {
+  .h1 {
+    margin-bottom: 15px;
+  }
+  .piano {
+    max-width: 95%;
+    height: clamp(120px, 25vh, 200px);
+    border-width: 8px;
+    border-radius: 15px;
+  }
+  .piano::before {
+    top: -6px;
+  }
+  .key > div:first-child { font-size: 0.8em; }
+  .key > div:last-child { font-size: 0.7em; }
+  .key.black {
+    width: 9%;
+    margin-left: -4.5%;
+    margin-right: -4.5%;
+    border: 1px solid #555;
+    border-top: none;
+  }
+  #config-toggle-btn { top: 15px; right: 15px; font-size: 1.3rem; padding: 6px 10px; }
+  .config-panel { top: 60px; right: 15px; width: 220px; padding: 15px; }
+}
+@media (max-width: 480px) {
+  .h1 {
+    padding: 10px 0;
+  }
+  .piano {
+    border-radius: 10px;
+    border-width: 5px;
+    height: clamp(100px, 20vh, 180px);
+  }
+  .piano::before {
+    top: -4px;
+    height: clamp(10px, 4%, 15px);
+  }
+  .key {
+    padding: 0.2rem;
+  }
+  .key > div:first-child { font-size: 0.7em; top: 0.3em; }
+  .key > div:last-child { font-size: 0.6em; bottom: 0.3em; }
+  .key.black {
+    width: 10%;
+    margin-left: -5%;
+    margin-right: -5%;
+    border: 1px solid #555;
+    border-top: none;
+  }
+  #config-toggle-btn { top: 10px; right: 10px; font-size: 1.2rem; padding: 5px 8px; }
+  .config-panel { top: 50px; right: 10px; width: calc(100% - 20px); }
+}
+.blur {
+  display: none;
+}
+
+/* Style for the new note name display */
+/*
+.note-name-display {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7em;
+  color: #888;
+  font-weight: normal;
+  pointer-events: none;
+  display: none;
+}
+
+/* Show the display when piano has the class */
+/*
+.piano.show-note-names .note-name-display {
+  display: block;
+}
+
+/* Adjust color for black keys */
+/*
+.key.black .note-name-display {
+    color: #ccc;
+}
+
+/* Adjust key text size */
+/*
+.key > div:first-child { font-size: 0.8em; }
+.key > div:last-child { font-size: 0.7em; }
+/* Adjust new display font size */
+/*
+.note-name-display { font-size: 0.6em; }
+
+/* Adjust black key width/margins if overlap looks wrong */
+/*
+.key {
+    padding: 0.2rem;
+    padding-top: 1.2em;
+}
+.key > div {
+    font-size: 0.6em;
+}
+/* Adjust new display font size */
+/*
+.note-name-display { font-size: 0.5em; top: 0.1em; }
+
+/* Adjust black key width/margins further */
+/*
+.key.black {
+    width: 9%;
+    margin-left: -4.5%;
+    margin-right: -4.5%;
+    border: 1px solid #555;
+    border-top: none;
+}
+*/
+
+/* Show key trigger when piano has the class */
+.piano.show-key-triggers .key > div:last-child {
+    display: block;
+}
+
+/* Adjust colors for black keys */
+.key.black > div:first-child { /* Note name */
+    color: #eee;
+}
+.key.black > div:last-child { /* Key trigger */
+    color: #aaa;
+}
+
+/* Update adjustments for first/last child */
+.key > div:first-child { font-size: 0.8em; top: 0.4em; }
+.key > div:last-child { font-size: 0.7em; bottom: 0.4em; }
+
+/* Further adjust key text/padding */
+.key {
+    padding: 0.2rem;
+}
+/* Update adjustments for first/last child */
+.key > div:first-child { font-size: 0.7em; top: 0.3em; }
+.key > div:last-child { font-size: 0.6em; bottom: 0.3em; }
+
+/* Adjust black key width/margins further */
+.key.black {
+    width: 9%;
+    margin-left: -4.5%;
+    margin-right: -4.5%;
+    border: 1px solid #555;
+    border-top: none;
 }
